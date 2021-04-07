@@ -13,8 +13,8 @@ const mergeImages = (sources = [], options = {}) => new Promise(resolve => {
 	options = Object.assign({}, defaultOptions, options);
 
 	// Setup browser/Node.js specific variables
-	const canvas = options.Canvas ? new options.Canvas() : window.document.createElement('canvas');
-	const Image = options.Image || window.Image;
+	const canvas = options.Canvas;
+	const Image = options.Image;
 
 	// Load sources
 	const images = sources.map(source => new Promise((resolve, reject) => {
